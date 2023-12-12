@@ -10,6 +10,7 @@ if (!fs.existsSync(clientDir)){
 
 const operatingSystem = os.type();
 const osInfoText = `This is being run on a ${operatingSystem} computer!`;
+
 // declare structure
 const pageDetails = {
     mainPage: { title: "Client Page", bgColor: "#FFD700"},
@@ -33,7 +34,19 @@ const htmlContent = `<!DOCTYPE html>
         <title>${pageDetails[dirName].title}</title>
     </head>
     <body>
-        <h1 style="text-align: center;">${pageDetails[dirName].title}</h1>
+    <style>
+        ul, h1 {
+            text-align: center;
+            list-style-type: none;
+        }
+    </style>
+        <h1>${pageDetails[dirName].title}</h1>
+    <ul>
+        <li><a href="/contactPage">Contact Page</a></li>
+        <li><a href="/aboutPage">About Page</a></li>
+        <li><a href="/blogPage">Blog Page</a></li>
+        <li><a href="/mainPage">Client Page</a></li>
+    </ul>
     </body>
     </html>`;
 
